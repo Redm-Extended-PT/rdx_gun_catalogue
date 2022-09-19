@@ -42,12 +42,6 @@ local weapons = {
 
 }
 
-local Framework = {}
-TriggerEvent("redemrp_inventory:getData",function(call)
-	Framework = call
-end)
-
-
 local code = math.random(111111,9999999)
 
 RegisterNetEvent("gunCatalogue:getCode")
