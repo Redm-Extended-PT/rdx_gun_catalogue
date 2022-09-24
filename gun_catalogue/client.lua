@@ -1,3 +1,6 @@
+RDX, GCL = nil,{}
+Citizen.CreateThread(function() while RDX == nil do TriggerEvent('rdx:getSharedObject', function(obj) RDX = obj end) Citizen.Wait(0) end end)
+
 local isOpen = false
 local doOpen = false
 local doClose = true
@@ -187,10 +190,6 @@ Citizen.CreateThread(function(...)
     end
 end)
 
---interate through the peds weapons and find all the groups that they are in
---interate through the weapon the ped is trying to buy, 
---if that group == the existing peds weapons groups then remove that
-
 function PurchaseWeapon(data,code1)
     if code == code1 then
         if data.isammo == 0 then
@@ -221,7 +220,7 @@ function PurchaseWeapon(data,code1)
             end
         end
     else
-        exports['mythic_notify']:DoLongHudText('error', 'Invalid code. You are not injecting, are ya?')
+        --exports['mythic_notify']:DoLongHudText('error', 'Invalid code. You are not injecting, are ya?')
     end
 end
 
@@ -232,8 +231,16 @@ end)
 
 function Purchase(data)
     TriggerServerEvent('gunCatalogue:getCode')
+    myCurrentweapon = GetWeapontypeGroup(GetHashKey(GetCurrentPedWeapon(playerPed, true)))
+    broughtweapon = GetWeapontypeGroup(GetHashKey(data.weapon))    
+
+    if myCurrentweapon == broughtweapon then
     Wait(200)
-    TriggerServerEvent('gunCatalogue:Purchase',data,code)
+    TriggerServerEvent('gunCatalogue:Purchase',data,code,true)    
+    else
+    TriggerServerEvent('gunCatalogue:Purchase',data,code,false) 
+    end    
+
 end
 
 

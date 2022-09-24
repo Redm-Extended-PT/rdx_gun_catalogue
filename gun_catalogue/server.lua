@@ -1,26 +1,29 @@
+RDX = nil
+TriggerEvent('rdx:getSharedObject', function(obj) RDX = obj end)
+
 local weapons = {
-	[1] = { ['weapon'] = 'WEAPON_REVOLVER_CATTLEMAN', ["PRICE"] = 13, ['label'] = 'Cattleman Revolver', ['AMMOlabel'] = 'revolver ammo', ["AMMOPRICE"] = 10},
-	[2] = { ['weapon'] = 'WEAPON_REVOLVER_DOUBLEACTION', ["PRICE"] = 15, ['label'] = 'Double-Action Revolver', ['AMMOlabel'] = 'revolver ammo', ["AMMOPRICE"] = 10},
-	[3] = { ['weapon'] = 'WEAPON_REVOLVER_SCHOFIELD', ["PRICE"] = 17, ['label'] = 'Schofield Revolver', ['AMMOlabel'] = 'revolver ammo', ["AMMOPRICE"] = 10},
-	[4] = { ['weapon'] = 'WEAPON_REVOLVER_LEMAT', ["PRICE"] = 25, ['label'] = 'LeMat Revolver', ['AMMOlabel'] = 'revolver ammo', ["AMMOPRICE"] = 10},
-	[5] = { ['weapon'] = 'WEAPON_PISTOL_VOLCANIC', ["PRICE"] = 25, ['label'] = 'Volcanic Pistol', ['AMMOlabel'] = 'pistol ammo', ["AMMOPRICE"] = 10},
-	[6] = { ['weapon'] = 'WEAPON_PISTOL_SEMIAUTO', ["PRICE"] = 40, ['label'] = 'Semi-Automatic Pistol', ['AMMOlabel'] = 'pistol ammo', ["AMMOPRICE"] = 10},
-	[7] = { ['weapon'] = 'WEAPON_PISTOL_MAUSER', ["PRICE"] = 45, ['label'] = 'Mauser Pistol', ['AMMOlabel'] = 'pistol ammo', ["AMMOPRICE"] = 10},
-	[8] = { ['weapon'] = 'WEAPON_REPEATER_CARBINE', ["PRICE"] = 60, ['label'] = 'Carbine Repeater', ['AMMOlabel'] = 'repeater ammo', ["AMMOPRICE"] = 10},
-	[9] = { ['weapon'] = 'WEAPON_REPEATER_WINCHESTER', ["PRICE"] = 63, ['label'] = 'Lancaster Repeater', ['AMMOlabel'] = 'repeater ammo', ["AMMOPRICE"] = 10},
-	[10] = { ['weapon'] = 'WEAPON_REPEATER_EVANS', ["PRICE"] = 63, ['label'] = 'Carbine Repeater', ['AMMOlabel'] = 'repeater ammo', ["AMMOPRICE"] = 10},
-	[11] = { ['weapon'] = 'WEAPON_REPEATER_HENRY', ["PRICE"] = 65, ['label'] = 'Litchfield Repeater', ['AMMOlabel'] = 'repeater ammo', ["AMMOPRICE"] = 10},
-	[12] = { ['weapon'] = 'WEAPON_RIFLE_VARMINT', ["PRICE"] = 35, ['label'] = 'Varmint Rifle', ['AMMOlabel'] = 'rifle ammo', ["AMMOPRICE"] = 10},
-	[13] = { ['weapon'] = 'WEAPON_RIFLE_SPRINGFIELD', ["PRICE"] = 55, ['label'] = 'Springfield Rifle', ['AMMOlabel'] = 'rifle ammo', ["AMMOPRICE"] = 20},
-	[14] = { ['weapon'] = 'WEAPON_RIFLE_BOLTACTION', ["PRICE"] = 65, ['label'] = 'Bolt-Action Rifle', ['AMMOlabel'] = 'rifle ammo', ["AMMOPRICE"] = 20},
-	[15] = { ['weapon'] = 'WEAPON_SNIPERRIFLE_ROLLINGBLOCK', ["PRICE"] = 75, ['label'] = 'Rolling-Block Rifle', ['AMMOlabel'] = 'rifle ammo', ["AMMOPRICE"] = 30},
-	[16] = { ['weapon'] = 'WEAPON_SNIPERRIFLE_CARCANO', ["PRICE"] = 70, ['label'] = 'Carcano Rifle', ['AMMOlabel'] = 'rifle ammo', ["AMMOPRICE"] = 20},
-	[17] = { ['weapon'] = 'WEAPON_SHOTGUN_SAWEDOFF', ["PRICE"] = 25, ['label'] = 'Sawed-Off Shotgun', ['AMMOlabel'] = 'shotgun ammo', ["AMMOPRICE"] = 10},
-	[18] = { ['weapon'] = 'WEAPON_SHOTGUN_DOUBLEBARREL', ["PRICE"] = 33, ['label'] = 'Double-Barrel Shotgun', ['AMMOlabel'] = 'shotgun ammo', ["AMMOPRICE"] = 10},
-	[19] = { ['weapon'] = 'WEAPON_SHOTGUN_PUMP', ["PRICE"] = 40, ['label'] = 'Pump-Action Shotgun', ['AMMOlabel'] = 'shotgun ammo', ["AMMOPRICE"] = 10},
-	[20] = { ['weapon'] = 'WEAPON_SHOTGUN_REPEATING', ["PRICE"] = 43, ['label'] = 'Repeating Shotgun', ['AMMOlabel'] = 'shotgun ammo', ["AMMOPRICE"] = 10},
-	[21] = { ['weapon'] = 'WEAPON_SHOTGUN_SEMIAUTO', ["PRICE"] = 45, ['label'] = 'Semi-Automatic Shotgun', ['AMMOlabel'] = 'shotgun ammo', ["AMMOPRICE"] = 10},
-	[22] = { ['weapon'] = 'WEAPON_BOW', ["PRICE"] = 20, ['label'] = 'Hunting Bow', ['AMMOlabel'] = 'arrows', ["AMMOPRICE"] = 5},
+	[1] = { ['weapon'] = 'WEAPON_REVOLVER_CATTLEMAN', ["PRICE"] = 13, ['label'] = 'Cattleman Revolver', ['AMMOlabel'] = 'revolver ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 24},
+	[2] = { ['weapon'] = 'WEAPON_REVOLVER_DOUBLEACTION', ["PRICE"] = 15, ['label'] = 'Double-Action Revolver', ['AMMOlabel'] = 'revolver ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 24},
+	[3] = { ['weapon'] = 'WEAPON_REVOLVER_SCHOFIELD', ["PRICE"] = 17, ['label'] = 'Schofield Revolver', ['AMMOlabel'] = 'revolver ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 24},
+	[4] = { ['weapon'] = 'WEAPON_REVOLVER_LEMAT', ["PRICE"] = 25, ['label'] = 'LeMat Revolver', ['AMMOlabel'] = 'revolver ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 24},
+	[5] = { ['weapon'] = 'WEAPON_PISTOL_VOLCANIC', ["PRICE"] = 25, ['label'] = 'Volcanic Pistol', ['AMMOlabel'] = 'pistol ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 24},
+	[6] = { ['weapon'] = 'WEAPON_PISTOL_SEMIAUTO', ["PRICE"] = 40, ['label'] = 'Semi-Automatic Pistol', ['AMMOlabel'] = 'pistol ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 24},
+	[7] = { ['weapon'] = 'WEAPON_PISTOL_MAUSER', ["PRICE"] = 45, ['label'] = 'Mauser Pistol', ['AMMOlabel'] = 'pistol ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 24},
+	[8] = { ['weapon'] = 'WEAPON_REPEATER_CARBINE', ["PRICE"] = 60, ['label'] = 'Carbine Repeater', ['AMMOlabel'] = 'repeater ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 16},
+	[9] = { ['weapon'] = 'WEAPON_REPEATER_WINCHESTER', ["PRICE"] = 63, ['label'] = 'Lancaster Repeater', ['AMMOlabel'] = 'repeater ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 16},
+	[10] = { ['weapon'] = 'WEAPON_REPEATER_EVANS', ["PRICE"] = 63, ['label'] = 'Carbine Repeater', ['AMMOlabel'] = 'repeater ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 16},
+	[11] = { ['weapon'] = 'WEAPON_REPEATER_HENRY', ["PRICE"] = 65, ['label'] = 'Litchfield Repeater', ['AMMOlabel'] = 'repeater ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 16},
+	[12] = { ['weapon'] = 'WEAPON_RIFLE_VARMINT', ["PRICE"] = 35, ['label'] = 'Varmint Rifle', ['AMMOlabel'] = 'rifle ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 12},
+	[13] = { ['weapon'] = 'WEAPON_RIFLE_SPRINGFIELD', ["PRICE"] = 55, ['label'] = 'Springfield Rifle', ['AMMOlabel'] = 'rifle ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 12},
+	[14] = { ['weapon'] = 'WEAPON_RIFLE_BOLTACTION', ["PRICE"] = 65, ['label'] = 'Bolt-Action Rifle', ['AMMOlabel'] = 'rifle ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 12},
+	[15] = { ['weapon'] = 'WEAPON_SNIPERRIFLE_ROLLINGBLOCK', ["PRICE"] = 75, ['label'] = 'Rolling-Block Rifle', ['AMMOlabel'] = 'rifle ammo', ["AMMOPRICE"] = 12,["AMMO_AMOUNT"] = 12},
+	[16] = { ['weapon'] = 'WEAPON_SNIPERRIFLE_CARCANO', ["PRICE"] = 70, ['label'] = 'Carcano Rifle', ['AMMOlabel'] = 'rifle ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 12},
+	[17] = { ['weapon'] = 'WEAPON_SHOTGUN_SAWEDOFF', ["PRICE"] = 25, ['label'] = 'Sawed-Off Shotgun', ['AMMOlabel'] = 'shotgun ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 8},
+	[18] = { ['weapon'] = 'WEAPON_SHOTGUN_DOUBLEBARREL', ["PRICE"] = 33, ['label'] = 'Double-Barrel Shotgun', ['AMMOlabel'] = 'shotgun ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 8},
+	[19] = { ['weapon'] = 'WEAPON_SHOTGUN_PUMP', ["PRICE"] = 40, ['label'] = 'Pump-Action Shotgun', ['AMMOlabel'] = 'shotgun ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 8},
+	[20] = { ['weapon'] = 'WEAPON_SHOTGUN_REPEATING', ["PRICE"] = 43, ['label'] = 'Repeating Shotgun', ['AMMOlabel'] = 'shotgun ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 8},
+	[21] = { ['weapon'] = 'WEAPON_SHOTGUN_SEMIAUTO', ["PRICE"] = 45, ['label'] = 'Semi-Automatic Shotgun', ['AMMOlabel'] = 'shotgun ammo', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 8},
+	[22] = { ['weapon'] = 'WEAPON_BOW', ["PRICE"] = 20, ['label'] = 'Hunting Bow', ['AMMOlabel'] = 'arrows', ["AMMOPRICE"] = 10,["AMMO_AMOUNT"] = 20},
 	[23] = { ['weapon'] = 'WEAPON_LASSO', ["PRICE"] = 5, ['label'] = 'Lasso', ['AMMOlabel'] = '', ["AMMOPRICE"] = 0},
 	[24] = { ['weapon'] = 'WEAPON_MELEE_BROKEN_SWORD', ["PRICE"] = 20, ['label'] = 'Antique Sword', ['AMMOlabel'] = '', ["AMMOPRICE"] = 0},
 	[25] = { ['weapon'] = 'WEAPON_MELEE_LANTERN', ["PRICE"] = 10, ['label'] = 'Lantern', ['AMMOlabel'] = '', ["AMMOPRICE"] = 0},
@@ -60,38 +63,40 @@ function weapon2(weapon)
 end
 
 RegisterNetEvent("gunCatalogue:Purchase")
-AddEventHandler("gunCatalogue:Purchase", function(data,code1)
+AddEventHandler("gunCatalogue:Purchase", function(data,code1,remove)
 	local _source = source
 	if code == code1 then
-		TriggerEvent('redem:getPlayerFromId', _source, function(user) 
-			local cash = user.getMoney()
-			if tonumber(data.isammo) ~= 1 then
-				if doesweaponexist(data.weapon) then
+		local _source = source
+		local xPlayer = RDX.GetPlayerFromId(_source)
+		local cash = xPlayer.getMoney()
+
+		    if tonumber(data.isammo) ~= 1 then				
 					local weapon2 = weapon2(data.weapon)
+				if not xPlayer.hasWeapon(data.weapon) then
 					if weapon2 then
-						if cash >= weapon2['PRICE'] then
-							TriggerClientEvent('gunCatalogue:Give',_source, data, code)
-							TriggerClientEvent('mythic_notify:client:SendAlert:long', _source, { type = 'success', text = 'Received '..weapon2['label']})
-							user.removeMoney(weapon2['PRICE'])
+						if cash >= weapon2['PRICE'] then						   
+                                --xPlayer.removeWeapon(xPlayer.getWeapon())						   
+						     	xPlayer.removeMoney(weapon2['PRICE'])
+							    xPlayer.addWeapon(data.weapon, weapon2['AMMO_AMOUNT'])
+								SetCurrentPedWeapon(xPlayer,data.weapon,true)						     
 						else
-							TriggerClientEvent('mythic_notify:client:SendAlert:long', _source, { type = 'error', text = 'You do not have enough money to buy this weapon'})
+
 						end
 					end
-				end
-			else
-				if doesweaponexist(data.weapon) then
+				end					
+			else				
 					local weapon2 = weapon2(data.weapon)
-					if weapon2 then
+					if weapon2 then						
 						if cash >= weapon2['AMMOPRICE'] then
-							TriggerClientEvent('gunCatalogue:Give',_source, data, code)
-							TriggerClientEvent('mythic_notify:client:SendAlert:long', _source, { type = 'success', text = 'Received '..weapon2['AMMOlabel']})
-							user.removeMoney(weapon2['AMMOPRICE'])
-						else
-							TriggerClientEvent('mythic_notify:client:SendAlert:long', _source, { type = 'error', text = 'You do not have enough money to buy ammo'})
+						   if xPlayer.hasWeapon(data.weapon) then							  
+							    xPlayer.removeMoney(weapon2['AMMOPRICE'])
+							    xPlayer.addWeaponAmmo(data.weapon, weapon2['AMMO_AMOUNT'])
+							    SetCurrentPedWeapon(xPlayer,data.weapon,true)							
+						    else
+								
+							end 
 						end
-					end
-				end
-			end
-		end)
+					end				
+			end		
 	end
 end)
